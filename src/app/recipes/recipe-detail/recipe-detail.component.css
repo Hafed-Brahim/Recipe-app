@@ -1,0 +1,15 @@
+.recipe-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+img {
+    margin-bottom: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}

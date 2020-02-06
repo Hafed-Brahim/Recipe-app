@@ -1,0 +1,32 @@
+a {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3px;
+}
+
+a:hover {
+    text-decoration: none;
+    transform: scale(1.015);
+}
+
+a > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+img {
+    margin-left: auto;
+}
+
+p, h4 {
+    margin: 0;
+    padding: 0;
+}
+
+h4 {
+    margin-bottom: 10px;
+}
+

@@ -1,2 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("assets/bootstrap/dist/css/bootstrap.min.css"); 
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between !important;
+    align-items: center !important;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between !important;
+    align-items: flex-start !important;
+}
