@@ -1,6 +1,9 @@
-<a href="#" class="list-group-item clearfix" (click)="onSelected()">
+<a class="list-group-item effect2" 
+  style="cursor: pointer;"
+  [routerLink]="[index]"
+  routerLinkActive="active">
   <div class="float-left">
-    <h4 class="list-group-item-heading">{{ recipe.name }}</h4>
+    <h6 class="list-group-item-heading">{{ recipe.name }}</h6>
     <p class="list-group-item-text">{{ recipe.description }}</p>
   </div>
   <img

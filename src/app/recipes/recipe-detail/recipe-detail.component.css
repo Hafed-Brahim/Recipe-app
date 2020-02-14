@@ -13,3 +13,8 @@ img {
 h1 {
     margin-bottom: 20px;
 }
+
+.details {
+    display: flex;
+    justify-content: space-between;
+}

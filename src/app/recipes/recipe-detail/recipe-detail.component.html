@@ -9,48 +9,64 @@
       />
     </div>
   </div>
+
   <div class="row">
     <div class="col-xs-12">
       <h1>{{ recipe.name }}</h1>
     </div>
   </div>
-  <div class="btn-group" role="group">
-    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-      <a class="dropdown-item" href="#">Dropdown link</a>
-      <a class="dropdown-item" href="#">Dropdown link</a>
-    </div>
-  </div>
 
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="btn-group">
-        <button
-          type="button"
-          class="btn btn-primary dropdown-toggle"
-          data-toggle="dropdown"
-        >
-          Manage Recipe
-        </button>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" (click)="onToShoppingList()" style="cursor: pointer;">To Shopping List</a>
-          <a class="dropdown-item">Edit Recipe</a>
-          <a class="dropdown-item">Delete Recipe</a>
-        </div>
+  <div class="container ">
+    <div class="btn-group" role="group">
+      <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+        <a class="dropdown-item" href="#">Dropdown link</a>
+        <a class="dropdown-item" href="#">Dropdown link</a>
       </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12">
+
+    <div class="btn-group">
+      <button
+        type="button"
+        class="btn btn-primary dropdown-toggle"
+        style="margin-top: 10px;"
+        data-toggle="dropdown"
+      >
+        Manage Recipe
+      </button>
+      <div class="dropdown-menu">
+        <a
+          class="dropdown-item"
+          (click)="onToShoppingList()"
+          style="cursor: pointer;"
+          >To Shopping List</a
+        >
+        <a
+          class="dropdown-item"
+          (click)="onEdirRecipe()"
+          style="cursor: pointer;"
+          >Edit Recipe</a
+        >
+        <a
+          class="dropdown-item"
+          style="cursor: pointer;"
+          (click)="onDeleteRecipe()"
+          >Delete Recipe</a
+        >
+      </div>
+    </div>
+
+    <div class="col-sm-12 mt-3 mb-3" style="padding: 0;">
       {{ recipe.description }}
     </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12">
-      <ul class="list-group">
-        <li class="list-group-item" *ngFor="let ing of recipe.ingredients">
-          {{ ing.name }} - {{ ing.amount }}
-        </li>
-      </ul>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let ing of recipe.ingredients">
+            {{ ing.name }} - {{ ing.amount }}
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

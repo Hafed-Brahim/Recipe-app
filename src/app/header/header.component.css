@@ -1,0 +1,10 @@
+.active {
+    border-bottom: 2px solid grey;
+}
+
+div > ul >li {
+    margin: 0 10px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
