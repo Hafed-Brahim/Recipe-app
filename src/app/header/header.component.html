@@ -27,11 +27,14 @@
         <div class="dropdown-menu">
           <a
             class="dropdown-item"
-            (click)="onToShoppingList()"
+            (click)="onSaveData()"
             style="cursor: pointer;"
             >Save Data</a
           >
-          <a class="dropdown-item" style="cursor: pointer;">Fetch Data</a>
+          <a class="dropdown-item"
+             style="cursor: pointer;"
+             (click)="onFetchData()"
+             >Fetch Data</a>
         </div>
       </div>
     </ul>
