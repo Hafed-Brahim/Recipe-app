@@ -1,11 +1,19 @@
 <div class="row mt-5">
   <div class="col-sm-12 col-md-9 col-lg-7">
 
-    <div class="alert alert-danger" *ngIf="error">
+    <!-- <div class="alert alert-danger" *ngIf="error">
       <p>{{error}}</p>
-    </div>
+    </div> -->
+<!-- 
+    <app-alert [message]="error" 
+               *ngIf="error" 
+               (close)="onHandelError()"></app-alert> -->
 
-    <div class="mt-5 mb-3" *ngIf="isLoading" style="text-align: center;">
+    <ng-template appPlaceholder></ng-template>
+
+    <div class="mt-5 mb-3" 
+         *ngIf="isLoading"
+         style="text-align: center;">
       <app-loading-spinner></app-loading-spinner>
     </div>
 
