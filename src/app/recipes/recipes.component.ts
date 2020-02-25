@@ -12,9 +12,7 @@ export class RecipesComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('heyyyyyyy')
     const a = this.dataStorageservice.fetchRecipes().subscribe();
-    console.log(a)
   }
 
 }
