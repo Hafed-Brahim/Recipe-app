@@ -1,3 +1,5 @@
+// we no longer use the shoppinglist service instead we use the ngrx library to handel the application state
+
 import { Ingredient } from '../shared/ingredient.model';
 import { Subject } from 'rxjs';
 

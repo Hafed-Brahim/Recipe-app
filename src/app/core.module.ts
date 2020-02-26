@@ -7,7 +7,7 @@ import { AuthInterceptorService } from './auth/auth.interceptor.service';
 
 @NgModule({
     providers: [
-        shoppingListService,
+        // shoppingListService,
         RecipeService,
         RecipesResolverService,
         { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true }
