@@ -3,8 +3,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Ingredient } from '../shared/ingredient.model';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
-import * as fromSoppingListReducer from './store/shopping-list.reducer';
 import * as sla from './store/shopping-list.action';
+import * as fromAppReducer from '../store/app.reducer';
 
 @Component({
   selector: 'app-shopping-list',
@@ -18,7 +18,7 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
 
 constructor(
   // private slService: shoppingListService,
-  private store: Store<fromSoppingListReducer.appState>) {}
+  private store: Store<fromAppReducer.AppState>) {}
 
   ngOnInit() {
   this.ingredientss = this.store.select('shoppingList');

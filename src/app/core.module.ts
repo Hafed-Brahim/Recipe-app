@@ -1,5 +1,4 @@
 import { NgModule } from "@angular/core";
-import { shoppingListService } from './shopping-list/shopping-list.service';
 import { RecipeService } from './recipes/recipe.service';
 import { RecipesResolverService } from './recipes/recipes-resolver.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
