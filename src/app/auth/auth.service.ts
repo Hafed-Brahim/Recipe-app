@@ -2,13 +2,6 @@ import { Injectable } from '@angular/core';
 import * as fromApp from '../store/app.reducer';
 import { Store } from '@ngrx/store';
 import * as aa from './store/auth.actions';
-// import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-// import { catchError, tap } from 'rxjs/operators';
-// import { throwError, BehaviorSubject } from 'rxjs';
-// import { User } from './user.model';
-// import { Router } from '@angular/router';
-// import { environment } from '../../environments/environment';
-// import * as aa from './store/auth.actions';
 
 // export interface AuthResponseData {
 //     kind: string;
@@ -20,7 +13,7 @@ import * as aa from './store/auth.actions';
 //     registered?: boolean; 
 // }
 
-@Injectable({providedIn: 'root'})
+@Injectable()
 export class AuthService {
     // user = new BehaviorSubject<User>(null);
     private tokenExperationTimer: any;

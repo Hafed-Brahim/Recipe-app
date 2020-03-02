@@ -25,10 +25,11 @@ const handelAuthentication = (resData: AuthResponseData) => {
 
     localStorage.setItem('userData', JSON.stringify(user));
 
-    return new aa.AuthenticateSuccess(new User(resData.email,
+    return new aa.AuthenticateSuccess({user: new User(resData.email,
         resData.localId,
         resData.idToken,
-        expirationDate));
+        expirationDate),
+        redirect: true});
 };
 
 const handelAuthError = (errorRes) => {
@@ -68,9 +69,9 @@ export class AuthEffects {
                     returnSecureToken: true
                 })
                 .pipe(
-                    tap((resData => {
+                    tap(resData => {
                         this.authService.setLogoutTimer(+resData.expiresIn * 1000);
-                    })),
+                    }),
                     map(authData => {
                         return handelAuthentication(authData);
                     }),
@@ -109,8 +110,10 @@ export class AuthEffects {
     @Effect({ dispatch: false })
     authRedirect = this.actions$.pipe(
         ofType(aa.AUTHENTICATE_SUCCESS),
-        tap(() => {
-            this.router.navigate(['/']);
+        tap((authSuccessAction: aa.AuthenticateSuccess) => {
+            if(authSuccessAction.payload.redirect) {
+                this.router.navigate(['/']);
+            }
         })
     )
 
@@ -150,7 +153,7 @@ export class AuthEffects {
                 const expirationDuration = new Date(userData._tokenExpirationDate).getTime() - new Date().getTime();
                 this.authService.setLogoutTimer(expirationDuration);
 
-                return new aa.AuthenticateSuccess(loadedUser);
+                return new aa.AuthenticateSuccess({user: loadedUser, redirect: false});
 
                 // const expirationDuration = new Date(userData._tokenExpirationDate).getTime() - new Date().getTime();
                 // this.autoLogout(expirationDuration);
@@ -161,9 +164,9 @@ export class AuthEffects {
     );
 
     constructor(private actions$: Actions,
-        private http: HttpClient,
-        private router: Router,
-        private authService: AuthService) {
+                private http: HttpClient,
+                private router: Router,
+                private authService: AuthService) {
 
     }
 }

@@ -22,7 +22,6 @@ constructor(
 
   ngOnInit() {
   this.ingredientss = this.store.select('shoppingList');
-  console.log(this.store.select('shoppingList'))
   // this.ingredients = this.slService.getIngrediens();
   // this.igChangeSub = this.slService.ingredientChanged.subscribe((ingredients: Ingredient[]) => {
   //   this.ingredients = ingredients;

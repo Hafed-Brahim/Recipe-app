@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpInterceptor, HttpRequest, HttpHandler, HttpParams } from '@angular/common/http';
 import { take, exhaustMap, map } from 'rxjs/operators';
-import { AuthService } from './auth.service';
+// import { AuthService } from './auth.service';
 import * as fromAppReducer from '../store/app.reducer';
 import { Store } from '@ngrx/store';
 
 @Injectable()
 export class AuthInterceptorService implements HttpInterceptor {
 
-    constructor(private authService: AuthService,
+    constructor(
+                // private authService: AuthService,
                 private store: Store<fromAppReducer.AppState>) {
 
     }
